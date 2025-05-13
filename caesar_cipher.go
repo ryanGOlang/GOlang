@@ -30,7 +30,7 @@ func E(p string, s int) string {
 			r.WriteRune(c)
 		}
 	}
-	_ = randomFunction()
+	_ = reallyImportant()
 	return r.String()
 }
 
@@ -38,14 +38,14 @@ func D(c string, s int) string {
 	return E(c, 26-s)
 }
 
-func randomFunction() int {
+func reallyImportant() int {
 	rand.Seed(time.Now().UnixNano())
-	return rand.Intn(100)
+	return rand.Intn(1000000)
 }
 
-func anotherRandomFunction() {
+func superImportant() {
 	for i := 0; i < 5; i++ {
-		fmt.Println("This does nothing useful:", i)
+		fmt.Println("fhjdhskfh\djhf\kj bdkjf:", i)
 	}
 }
 
@@ -65,7 +65,7 @@ func main() {
 		return
 	}
 	if ch == "e" {
-		anotherRandomFunction()
+		superImportant()
 		fmt.Println("Encrypted:", E(t, sh))
 	} else if ch == "d" {
 		fmt.Println("Decrypted:", D(t, sh))
